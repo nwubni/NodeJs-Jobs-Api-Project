@@ -1,4 +1,5 @@
 #### Setup
+Download and repository and run the following command
 
 ```bash
 npm install && npm start
@@ -32,8 +33,8 @@ This project uses the following packages for user authentication and security:
 - XSS Clean, a Node.js Connect middleware to sanitize user input coming from POST body, GET queries, and url params.
 - Express Rate Limit is a package used to limit repeated requests to public APIs and other endpoints. In the case of malicious exploitation, this package increases security by restricting the number of requests a malicious user sends to an API in a giving time.
 
-### The documentation for this API was generated using Swagger UI
+#### The documentation for this API was generated using Swagger UI
 
-### Project Result
+#### Project Result
 The project is hosted on Heroku and at this link: 
 https://jobzz-api.herokuapp.com/
