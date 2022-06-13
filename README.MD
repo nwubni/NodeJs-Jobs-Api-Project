@@ -4,66 +4,36 @@
 npm install && npm start
 ```
 
-#### Database Connection
+#### This is a simple API built with NodeJs and MongoDb. It allows users to do the following:
 
-1. Import connect.js
-2. Invoke in start()
-3. Setup .env in the root
-4. Add MONGO_URI with correct value
+1. Register and create their account
+2. Login to their account
+3. Create job listings
+4. Update job listings
+5. Delete job listings
+6. View a single job listing
+7. View all jobs they've listed
 
-#### Routers
+#### The API has two route
 
-- auth.js
-- jobs.js
-
-#### User Model
-
-Email Validation Regex
-
-```regex
-/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+- auth.js for user registration and login
+- jobs.js for job listing management
 ```
 
-#### Register User
+#### User Authentication
+This project uses the following packages for user authentication and security:
+- BCrypt for password hashing
+- Json Web Token for token generation and user authorization
 
-- Validate - name, email, password - with Mongoose
-- Hash Password (with bcryptjs)
-- Save User
-- Generate Token
-- Send Response with Token
+#### Extra security packages used in this project are:
 
-#### Login User
+- Helmet for securing Express apps by setting various HTTP headers.
+- CORS for providing a Connect/Express middleware that can be used to enable Cross-origin Resource Sharing with various options.
+- XSS Clean, a Node.js Connect middleware to sanitize user input coming from POST body, GET queries, and url params.
+- Express Rate Limit is a package used to limit repeated requests to public APIs and other endpoints. In the case of malicious exploitation, this package increases security by restricting the number of requests a malicious user sends to an API in a giving time.
 
-- Validate - email, password - in controller
-- If email or password is missing, throw BadRequestError
-- Find User
-- Compare Passwords
-- If no user or password does not match, throw UnauthenticatedError
-- If correct, generate Token
-- Send Response with Token
+### The documentation for this API was generated using Swagger UI
 
-#### Mongoose Errors
-
-- Validation Errors
-- Duplicate (Email)
-- Cast Error
-
-#### Security
-
-- helmet
-- cors
-- xss-clean
-- express-rate-limit
-
-Swagger UI
-
-```yaml
-/jobs/{id}:
-  parameters:
-    - in: path
-      name: id
-      schema:
-        type: string
-      required: true
-      description: the job id
-```
+### Project Result
+The project is hosted on Heroku and at this link: 
+https://jobzz-api.herokuapp.com/
