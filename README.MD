@@ -19,7 +19,6 @@ npm install && npm start
 
 - auth.js for user registration and login
 - jobs.js for job listing management
-```
 
 #### User Authentication
 This project uses the following packages for user authentication and security:
@@ -38,3 +37,4 @@ This project uses the following packages for user authentication and security:
 #### Project Result
 The project is hosted on Heroku and at this link: 
 https://jobzz-api.herokuapp.com/
+```
